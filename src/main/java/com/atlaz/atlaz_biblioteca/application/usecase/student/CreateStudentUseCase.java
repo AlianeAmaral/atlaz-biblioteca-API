@@ -1,4 +1,4 @@
-package com.atlaz.atlaz_biblioteca.application.usecase;
+package com.atlaz.atlaz_biblioteca.application.usecase.student;
 
 import com.atlaz.atlaz_biblioteca.application.port.out.StudentRepository;
 import com.atlaz.atlaz_biblioteca.domain.model.Student;
