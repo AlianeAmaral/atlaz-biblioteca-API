@@ -3,18 +3,13 @@ package com.atlaz.atlaz_biblioteca.infrastructure.interfaces.controller;
 import com.atlaz.atlaz_biblioteca.application.usecase.book.CreateBookUseCase;
 import com.atlaz.atlaz_biblioteca.application.usecase.book.ListAllBookUseCase;
 import com.atlaz.atlaz_biblioteca.domain.model.Book;
-import com.atlaz.atlaz_biblioteca.domain.model.Student;
 import com.atlaz.atlaz_biblioteca.infrastructure.interfaces.dto.request.CreateBookRequest;
 import com.atlaz.atlaz_biblioteca.infrastructure.interfaces.dto.response.BookResponse;
-import com.atlaz.atlaz_biblioteca.infrastructure.interfaces.dto.response.StudentResponse;
 import com.atlaz.atlaz_biblioteca.infrastructure.interfaces.mapper.BookMapper;
-import com.atlaz.atlaz_biblioteca.infrastructure.interfaces.mapper.StudentMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
-import static com.atlaz.atlaz_biblioteca.infrastructure.interfaces.mapper.BookMapper.toResponse;
 
 @RestController
 @RequestMapping("/books")

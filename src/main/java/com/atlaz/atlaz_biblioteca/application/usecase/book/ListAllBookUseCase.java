@@ -11,8 +11,8 @@ public class ListAllBookUseCase {
 
     private final BookRepository bookRepository;
 
-    public ListAllBookUseCase(BookRepository studentRepository) {
-        this.bookRepository = studentRepository;
+    public ListAllBookUseCase(BookRepository bookRepository) {
+        this.bookRepository = bookRepository;
     }
 
     public List<Book> execute() {

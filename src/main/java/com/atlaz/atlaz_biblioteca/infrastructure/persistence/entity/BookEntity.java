@@ -1,5 +1,6 @@
 package com.atlaz.atlaz_biblioteca.infrastructure.persistence.entity;
 
+import com.atlaz.atlaz_biblioteca.domain.model.BookStatus;
 import jakarta.persistence.*;
 
 @Entity
@@ -22,8 +23,9 @@ public class BookEntity {
     @Column(nullable = true)
     private String imageId;
 
+    @Enumerated(EnumType.STRING) // @Enumerated faz o hibernate salvar o texto "AVAILABLE"
     @Column(nullable = false)
-    private String bookStatus;
+    private BookStatus bookStatus;
 
     public BookEntity() {
     }
@@ -62,11 +64,11 @@ public class BookEntity {
         this.imageId = imageId;
     }
 
-    public String getBookStatus() {
+    public BookStatus getBookStatus() {
         return bookStatus;
     }
 
-    public void setBookStatus(String bookStatus) {
+    public void setBookStatus(BookStatus bookStatus) {
         this.bookStatus = bookStatus;
     }
 }
