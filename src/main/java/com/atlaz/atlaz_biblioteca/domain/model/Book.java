@@ -1,7 +1,5 @@
 package com.atlaz.atlaz_biblioteca.domain.model;
 
-import java.time.LocalDateTime;
-
 public class Book {
     private Long id;
     private String title;

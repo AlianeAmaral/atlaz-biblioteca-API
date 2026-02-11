@@ -1,30 +1,30 @@
-package com.atlaz.atlaz_biblioteca.application.usecase.loan;
-
-import com.atlaz.atlaz_biblioteca.domain.model.Loan;
-import com.atlaz.atlaz_biblioteca.domain.repository.LoanRepository;
-import org.springframework.stereotype.Service;
-
-import java.time.LocalDateTime;
-import java.util.List;
-
-@Service // spring irá injetar no controller
-public class CreateLoanUseCase {
-
-    private final LoanRepository repository;
-
-    public CreateLoanUseCase(LoanRepository repository) {
-        this.repository = repository;
-    }
-
-    public Loan execute(Loan loan) {
-        // define a data de hoje automaticamente
-        loan.setLoanDate(LocalDateTime.now());
-
-        // salva o empréstimo usando o adapter
-        return repository.save(loan);
-    }
-
-    public List<Loan> findAll() {
-        return repository.findAll();
-    }
-}
+//package com.atlaz.atlaz_biblioteca.application.usecase.loan;
+//
+//import com.atlaz.atlaz_biblioteca.domain.model.loan;
+//import com.atlaz.atlaz_biblioteca.domain.repository.loanrepository;
+//import org.springframework.stereotype.service;
+//
+//import java.time.localdatetime;
+//import java.util.list;
+//
+//@service // spring irá injetar no controller
+//public class createloanusecase {
+//
+//    private final loanrepository repository;
+//
+//    public createloanusecase(loanrepository repository) {
+//        this.repository = repository;
+//    }
+//
+//    public loan execute(loan loan) {
+//        // define a data de hoje automaticamente
+//        loan.setloandate(localdatetime.now());
+//
+//        // salva o empréstimo usando o adapter
+//        return repository.save(loan);
+//    }
+//
+//    public list<loan> findall() {
+//        return repository.findall();
+//    }
+//}

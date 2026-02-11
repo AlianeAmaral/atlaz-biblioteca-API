@@ -23,7 +23,7 @@ public class BookEntity {
     private String imageId;
 
     @Column(nullable = false)
-    private String status;
+    private String bookStatus;
 
     public BookEntity() {
     }
@@ -62,11 +62,11 @@ public class BookEntity {
         this.imageId = imageId;
     }
 
-    public String getStatus() {
-        return status;
+    public String getBookStatus() {
+        return bookStatus;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setBookStatus(String bookStatus) {
+        this.bookStatus = bookStatus;
     }
 }

@@ -22,7 +22,7 @@ public class StudentRepositoryAdapter implements StudentRepository {
     @Override
     public Student save(Student student) {
 
-        // converte o domain para entity
+        // converte o domínio para entity
         StudentEntity entity = new StudentEntity();
         if (student.getId() != null) {
             entity.setId(student.getId());
@@ -35,7 +35,7 @@ public class StudentRepositoryAdapter implements StudentRepository {
 
         StudentEntity savedEntity = studentJpaRepository.save(entity);
 
-        // converte de volta o entity para domain e retorna
+        // converte de volta o entity para domain e retorna o resultado
         student.setId(savedEntity.getId());
         return student;
     }

@@ -30,7 +30,7 @@ public class BookRepositoryAdapter implements BookRepository {
         entity.setImageId(book.getImageId());
 
         // converte o enum para string no banco
-        entity.setStatus(book.getStatus() != null ? book.getStatus().name() : "AVAILABLE");
+        entity.setBookStatus(book.getBookStatus() != null ? book.getBookStatus().name() : "AVAILABLE");
 
         BookEntity saved = jpaRepository.save(entity);
         book.setId(saved.getId());

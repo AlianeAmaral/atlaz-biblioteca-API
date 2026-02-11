@@ -6,15 +6,9 @@ import java.util.Optional;
 
 public interface StudentRepository {
 
-    // salva ou atualiza aluno
-    Student save(Student student);
+    Student save(Student student); // salva ou atualiza aluno
 
-    // busca de aluno pelo ID
-    Optional<Student> findById(Long id);
+    Optional<Student> findById(Long id); // busca de aluno pelo ID
 
-    // lista todos os alunos cadastrados
-    List<Student> findAll();
-
-    // se for o caso de precisar aplicar delete futuramente, utilizar o seguinte:
-    //void deleteById(Long id);
+    List<Student> findAll(); // lista todos os alunos cadastrados
 }

@@ -4,16 +4,18 @@ import com.atlaz.atlaz_biblioteca.domain.model.Book;
 import com.atlaz.atlaz_biblioteca.domain.repository.BookRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
-public class CreateBookUseCase {
+public class ListAllBookUseCase {
 
     private final BookRepository bookRepository;
 
-    public CreateBookUseCase(BookRepository bookRepository) {
-        this.bookRepository = bookRepository;
+    public ListAllBookUseCase(BookRepository studentRepository) {
+        this.bookRepository = studentRepository;
     }
 
-    public Book execute(Book book) {
-        return bookRepository.save(book);
+    public List<Book> execute() {
+        return bookRepository.findAll();
     }
 }
