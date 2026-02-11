@@ -10,47 +10,49 @@ public class StudentEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String registration;
+    @Column(nullable = false)
     private String name;
+
+    @Column(nullable = false, unique = true)
     private String email;
+
+    @Column(nullable = false, unique = true)
+    private String registration;
+
     private String imageId;
 
+    // construtor vazio também para JPA
+    public StudentEntity() {
+    }
+
+    // getters e setters importantes para execução do hibernate
     public Long getId() {
         return id;
     }
-
     public void setId(Long id) {
         this.id = id;
     }
-
-    public String getRegistration() {
-        return registration;
-    }
-
-    public void setRegistration(String registration) {
-        this.registration = registration;
-    }
-
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
-
     public String getEmail() {
         return email;
     }
-
     public void setEmail(String email) {
         this.email = email;
     }
-
+    public String getRegistration() {
+        return registration;
+    }
+    public void setRegistration(String registration) {
+        this.registration = registration;
+    }
     public String getImageId() {
         return imageId;
     }
-
     public void setImageId(String imageId) {
         this.imageId = imageId;
     }

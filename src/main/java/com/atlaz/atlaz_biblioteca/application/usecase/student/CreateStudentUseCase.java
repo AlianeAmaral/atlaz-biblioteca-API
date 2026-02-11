@@ -1,8 +1,10 @@
 package com.atlaz.atlaz_biblioteca.application.usecase.student;
 
-import com.atlaz.atlaz_biblioteca.application.port.out.StudentRepository;
+import com.atlaz.atlaz_biblioteca.domain.repository.StudentRepository;
 import com.atlaz.atlaz_biblioteca.domain.model.Student;
+import org.springframework.stereotype.Service;
 
+@Service
 public class CreateStudentUseCase {
 
     private final StudentRepository studentRepository;

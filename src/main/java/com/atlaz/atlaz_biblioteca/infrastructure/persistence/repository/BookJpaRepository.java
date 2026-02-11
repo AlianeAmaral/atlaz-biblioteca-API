@@ -1,4 +1,9 @@
 package com.atlaz.atlaz_biblioteca.infrastructure.persistence.repository;
 
-public class BookJpaRepository {
+import com.atlaz.atlaz_biblioteca.infrastructure.persistence.entity.BookEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface BookJpaRepository extends JpaRepository<BookEntity, Long> {
 }
