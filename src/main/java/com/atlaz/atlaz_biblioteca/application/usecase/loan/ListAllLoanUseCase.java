@@ -4,16 +4,18 @@ import com.atlaz.atlaz_biblioteca.domain.model.Loan;
 import com.atlaz.atlaz_biblioteca.domain.repository.LoanRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
-public class CreateLoanUseCase {
+public class ListAllLoanUseCase {
 
     private final LoanRepository loanRepository;
 
-    public CreateLoanUseCase(LoanRepository loanRepository) {
+    public ListAllLoanUseCase(LoanRepository loanRepository) {
         this.loanRepository = loanRepository;
     }
 
-    public Loan execute(Loan loan) {
-        return loanRepository.save(loan);
+    public List<Loan> execute() {
+        return loanRepository.findAll();
     }
 }
