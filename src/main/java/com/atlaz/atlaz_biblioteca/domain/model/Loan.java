@@ -4,16 +4,16 @@ import java.time.LocalDateTime;
 
 public class Loan {
     private Long id;
-    private Long studentId;
-    private Long bookId;
+    private String registration;
+    private Long bookCode;
     private LocalDateTime startDate;
     private LocalDateTime endDate;
     private LoanStatus loanStatus;
 
-    public Loan(Long id, Long studentId, Long bookId, LocalDateTime startDate, LocalDateTime endDate, LoanStatus loanStatus) {
+    public Loan(Long id, String registration, Long bookCode, LocalDateTime startDate, LocalDateTime endDate, LoanStatus loanStatus) {
         this.id = id;
-        this.studentId = studentId;
-        this.bookId = bookId;
+        this.registration = registration;
+        this.bookCode = bookCode;
         this.startDate = startDate;
         this.endDate = endDate;
         this.loanStatus = loanStatus;
@@ -30,20 +30,20 @@ public class Loan {
         this.id = id;
     }
 
-    public Long getStudentId() {
-        return studentId;
+    public String getRegistration() {
+        return registration;
     }
 
-    public void setStudentId(Long studentId) {
-        this.studentId = studentId;
+    public void setRegistration(String registration) {
+        this.registration = registration;
     }
 
-    public Long getBookId() {
-        return bookId;
+    public Long getBookCode() {
+        return bookCode;
     }
 
-    public void setBookId(Long bookId) {
-        this.bookId = bookId;
+    public void setBookCode(Long bookCode) {
+        this.bookCode = bookCode;
     }
 
     public LocalDateTime getStartDate() {

@@ -4,6 +4,7 @@ import com.atlaz.atlaz_biblioteca.domain.model.Student;
 import com.atlaz.atlaz_biblioteca.domain.repository.StudentRepository;
 import com.atlaz.atlaz_biblioteca.infrastructure.persistence.entity.StudentEntity;
 import com.atlaz.atlaz_biblioteca.infrastructure.persistence.repository.StudentJpaRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -20,6 +21,7 @@ public class StudentRepositoryAdapter implements StudentRepository {
     }
 
     @Override
+    @Transactional
     public Student save(Student student) {
 
         // converte o domínio para entity
@@ -41,8 +43,8 @@ public class StudentRepositoryAdapter implements StudentRepository {
     }
 
     @Override
-    public Optional<Student> findById(Long id) {
-        return studentJpaRepository.findById(id)
+    public Optional<Student> findByRegistration(String registration) {
+        return studentJpaRepository.findByRegistration(registration)
                 .map(this::toDomain);
     }
 

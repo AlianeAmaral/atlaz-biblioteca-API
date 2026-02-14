@@ -27,6 +27,7 @@ public class BookRepositoryAdapter implements BookRepository {
             entity.setId(book.getId());
         }
 
+        entity.setBookCode(book.getBookCode());
         entity.setTitle(book.getTitle());
         entity.setAuthor(book.getAuthor());
         entity.setGenre(book.getGenre());
@@ -40,8 +41,8 @@ public class BookRepositoryAdapter implements BookRepository {
     }
 
     @Override
-    public Optional<Book> findById(Long id) {
-        return bookJpaRepository.findById(id)
+    public Optional<Book> findByBookCode(Long bookCode) {
+        return bookJpaRepository.findByBookCode(bookCode)
                 .map(this::toDomain);
     }
 
@@ -55,6 +56,7 @@ public class BookRepositoryAdapter implements BookRepository {
     private Book toDomain(BookEntity entity) {
         Book book = new Book();
         book.setId(entity.getId());
+        book.setBookCode(entity.getBookCode());
         book.setTitle(entity.getTitle());
         book.setAuthor(entity.getAuthor());
         book.setGenre(entity.getGenre());

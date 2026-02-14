@@ -2,14 +2,16 @@ package com.atlaz.atlaz_biblioteca.domain.model;
 
 public class Book {
     private Long id;
+    private Long bookCode;
     private String title;
     private String author;
     private String genre;
     private String imageId;
     private BookStatus bookStatus;
 
-    public Book(Long id, String title, String author, String genre, String imageId, BookStatus bookStatus) {
+    public Book(Long id, String title, Long bookCode, String author, String genre, String imageId, BookStatus bookStatus) {
         this.id = id;
+        this.bookCode = bookCode;
         this.title = title;
         this.author = author;
         this.genre = genre;
@@ -26,6 +28,14 @@ public class Book {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Long getBookCode() {
+        return bookCode;
+    }
+
+    public void setBookCode(Long bookCode) {
+        this.bookCode = bookCode;
     }
 
     public String getTitle() {

@@ -6,6 +6,9 @@ import jakarta.validation.constraints.NotNull;
 
 public record CreateBookRequest (
 
+        @NotNull(message = "O preenchimento do código do livro é obrigatório")
+        Long bookCode,
+
         @NotBlank(message = "O preenchimento do título do livro é obrigatório")
         String title,
 

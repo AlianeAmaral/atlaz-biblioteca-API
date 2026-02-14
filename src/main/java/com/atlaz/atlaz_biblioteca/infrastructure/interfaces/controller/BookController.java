@@ -17,20 +17,22 @@ public class BookController {
 
     private final CreateBookUseCase createBookUseCase;
     private final ListAllBookUseCase listAllBookUseCase;
+    private final BookMapper bookMapper;
 
-    public BookController(CreateBookUseCase createBookUseCase, ListAllBookUseCase listAllBookUseCase) {
+    public BookController(CreateBookUseCase createBookUseCase, ListAllBookUseCase listAllBookUseCase, BookMapper bookMapper) {
         this.createBookUseCase = createBookUseCase;
         this.listAllBookUseCase = listAllBookUseCase;
+        this.bookMapper = bookMapper;
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public BookResponse create(@RequestBody CreateBookRequest request) {
 
-        Book bookDomain = BookMapper.toDomain(request);
+        Book bookDomain = bookMapper.toDomain(request);
         Book savedBook = createBookUseCase.execute(bookDomain);
 
-        return BookMapper.toResponse(savedBook);
+        return bookMapper.toResponse(savedBook);
     }
 
     @GetMapping
@@ -40,7 +42,7 @@ public class BookController {
         List<Book> books = listAllBookUseCase.execute();
 
         return books.stream()
-                .map(BookMapper::toResponse)
+                .map(bookMapper::toResponse)
                 .toList();
     }
 }

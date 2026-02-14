@@ -12,6 +12,9 @@ public class BookEntity {
     private Long id;
 
     @Column(nullable = false, unique = true)
+    private Long bookCode;
+
+    @Column(nullable = false, unique = true)
     private String title;
 
     @Column(nullable = false)
@@ -33,21 +36,35 @@ public class BookEntity {
     public Long getId() {
         return id;
     }
+
     public void setId(Long id) {
         this.id = id;
     }
+
+    public Long getBookCode() {
+        return bookCode;
+    }
+
+    public void setBookCode(Long bookCode) {
+        this.bookCode = bookCode;
+    }
+
     public String getTitle() {
         return title;
     }
+
     public void setTitle(String title) {
         this.title = title;
     }
+
     public String getAuthor() {
         return author;
     }
+
     public void setAuthor(String author) {
         this.author = author;
     }
+
     public String getGenre() {
         return genre;
     }

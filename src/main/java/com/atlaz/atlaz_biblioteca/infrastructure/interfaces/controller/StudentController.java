@@ -18,24 +18,26 @@ public class StudentController {
     // foi colocado dessa forma para separar quem cria e quem lista (SRP: princípio da responsabilidade única)
     private final CreateStudentUseCase createStudentUseCase;
     private final ListAllStudentUseCase listAllStudentUseCase;
+    private final StudentMapper studentMapper;
 
     // construtor que injeta as duas dependências
-    public StudentController(CreateStudentUseCase createStudentUseCase, ListAllStudentUseCase listAllStudentUseCase) {
+    public StudentController(CreateStudentUseCase createStudentUseCase, ListAllStudentUseCase listAllStudentUseCase, StudentMapper studentMapper) {
         this.createStudentUseCase = createStudentUseCase;
         this.listAllStudentUseCase = listAllStudentUseCase;
+        this.studentMapper = studentMapper;
     }
 
     @PostMapping
-    @ResponseStatus(HttpStatus.CREATED) // boa prática para retorno - 201 (sucesso) / 200 (sem sucesso)
+    @ResponseStatus(HttpStatus.CREATED) // boa prática para retorno - 201 (sucesso gravado no banco), etc
     public StudentResponse create(@RequestBody CreateStudentRequest request) {
 
         // converte DTO (request) para domínio
-        Student studentDomain = StudentMapper.toDomain(request);
+        Student studentDomain = studentMapper.toDomain(request);
         // executa regra de negócio
         Student savedStudent = createStudentUseCase.execute(studentDomain);
 
         // converte domínio para DTO (response) e retorna resultado
-        return StudentMapper.toResponse(savedStudent);
+        return studentMapper.toResponse(savedStudent);
     }
 
     @GetMapping
@@ -47,7 +49,7 @@ public class StudentController {
 
         // converte a lista inteira de domínio para DTO de response
         return students.stream()
-                .map(StudentMapper::toResponse)
+                .map(studentMapper::toResponse)
                 .toList();
     }
 }
