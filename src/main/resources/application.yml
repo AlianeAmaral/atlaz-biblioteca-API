@@ -12,6 +12,10 @@ spring:
       hibernate:
         format_sql: true
 
+data:
+  mongodb:
+    uri: mongodb://localhost:27017/biblioteca_midia
+
 springdoc:
   api-docs:
     path: /v3/api-docs
