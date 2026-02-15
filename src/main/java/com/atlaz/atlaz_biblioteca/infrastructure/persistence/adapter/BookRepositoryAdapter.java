@@ -1,7 +1,6 @@
 package com.atlaz.atlaz_biblioteca.infrastructure.persistence.adapter;
 
 import com.atlaz.atlaz_biblioteca.domain.model.Book;
-import com.atlaz.atlaz_biblioteca.domain.model.Student;
 import com.atlaz.atlaz_biblioteca.domain.repository.BookRepository;
 import com.atlaz.atlaz_biblioteca.infrastructure.persistence.entity.BookEntity;
 import com.atlaz.atlaz_biblioteca.infrastructure.persistence.repository.BookJpaRepository;

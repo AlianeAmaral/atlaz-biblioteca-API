@@ -23,7 +23,7 @@ public class BookEntity {
     @Column(nullable = false)
     private String genre;
 
-    @Column(nullable = true)
+    @Column(nullable = true, name = "book_id")
     private String imageId;
 
     @Enumerated(EnumType.STRING) // @Enumerated faz o hibernate salvar o texto "AVAILABLE"

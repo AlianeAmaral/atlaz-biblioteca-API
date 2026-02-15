@@ -19,8 +19,10 @@ public class StudentEntity {
     @Column(nullable = false, unique = true)
     private String registration;
 
+    @Column(name = "student_id")
     private String imageId;
 
+    @Column(name = "enrollment_proof_id")
     private String enrollmentProofId;
 
     // construtor vazio também para JPA
