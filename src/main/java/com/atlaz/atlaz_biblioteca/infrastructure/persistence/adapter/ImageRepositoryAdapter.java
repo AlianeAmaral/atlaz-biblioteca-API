@@ -17,6 +17,7 @@ public class ImageRepositoryAdapter implements ImageRepository {
         this.imageMongoRepository = imageMongoRepository;
     }
 
+    // salva imagem no mongodb de fato
     @Override
     public Image save(Image image) {
 
