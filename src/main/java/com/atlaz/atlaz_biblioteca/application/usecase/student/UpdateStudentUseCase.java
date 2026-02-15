@@ -21,6 +21,7 @@ public class UpdateStudentUseCase {
                     existingStudent.setName(studentUpdate.getName());
                     existingStudent.setEmail(studentUpdate.getEmail());
                     existingStudent.setImageId(studentUpdate.getImageId());
+                    existingStudent.setEnrollmentProofId(studentUpdate.getEnrollmentProofId());
 
                     // salva versão atualizada
                     return studentRepository.save(existingStudent);

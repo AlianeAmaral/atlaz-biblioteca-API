@@ -15,7 +15,8 @@ public class StudentMapper {
                 request.name(), // está como request pois no CreateStudentRequest está como record
                 request.email(),
                 request.registration(),
-                request.imageId()
+                request.imageId(),
+                request.enrollmentProofId()
         );
     }
 
@@ -26,7 +27,8 @@ public class StudentMapper {
                 student.getName(),
                 student.getEmail(),
                 student.getRegistration(),
-                student.getImageId()
+                student.getImageId(),
+                student.getEnrollmentProofId()
         );
     }
 }

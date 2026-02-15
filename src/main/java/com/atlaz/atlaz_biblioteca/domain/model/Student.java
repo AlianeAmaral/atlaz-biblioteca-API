@@ -7,14 +7,16 @@ public class Student {
     private String email;
     private String registration;
     private String imageId;
+    private String enrollmentProofId;
 
     // construtor com todos os argumentos, o atributo recebe o valor recebido de fora
-    public Student(Long id, String name, String email, String registration, String imageId) {
+    public Student(Long id, String name, String email, String registration, String imageId, String enrollmentProofId) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.registration = registration;
         this.imageId = imageId;
+        this.enrollmentProofId = enrollmentProofId;
     }
 
     // construtor vazio (flexibilidade para criação do objeto)
@@ -59,5 +61,13 @@ public class Student {
 
     public void setImageId(String imageId) {
         this.imageId = imageId;
+    }
+
+    public String getEnrollmentProofId() {
+        return enrollmentProofId;
+    }
+
+    public void setEnrollmentProofId(String enrollmentProofId) {
+        this.enrollmentProofId = enrollmentProofId;
     }
 }

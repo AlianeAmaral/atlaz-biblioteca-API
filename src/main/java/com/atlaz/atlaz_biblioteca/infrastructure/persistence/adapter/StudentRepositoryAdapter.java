@@ -34,6 +34,7 @@ public class StudentRepositoryAdapter implements StudentRepository {
         entity.setEmail(student.getEmail());
         entity.setRegistration(student.getRegistration());
         entity.setImageId(student.getImageId());
+        entity.setEnrollmentProofId(student.getEnrollmentProofId());
 
         StudentEntity savedEntity = studentJpaRepository.save(entity);
 
@@ -71,6 +72,7 @@ public class StudentRepositoryAdapter implements StudentRepository {
         student.setEmail(entity.getEmail());
         student.setRegistration(entity.getRegistration());
         student.setImageId(entity.getImageId());
+        student.setEnrollmentProofId(entity.getEnrollmentProofId());
         return student;
     }
 }

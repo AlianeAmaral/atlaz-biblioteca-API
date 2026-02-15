@@ -19,5 +19,7 @@ public record CreateStudentRequest (
             @NotBlank(message = "O preechimento da matrícula é obrigatório")
             String registration,
 
-            String imageId
+            String imageId,
+
+            String enrollmentProofId
 ) {}

@@ -5,5 +5,6 @@ public record StudentResponse(
         String name,
         String email,
         String registration,
-        String imageId
+        String imageId,
+        String enrollmentProofId
 ) {}
