@@ -55,7 +55,7 @@ public class StudentController {
                 .toList();
     }
 
-    @PutMapping("/{id}")
+    @PatchMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public StudentResponse update(@PathVariable Long id, @RequestBody CreateStudentRequest request) {
 

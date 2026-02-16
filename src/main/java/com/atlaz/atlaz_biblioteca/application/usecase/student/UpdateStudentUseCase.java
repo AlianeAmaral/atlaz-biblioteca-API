@@ -17,11 +17,27 @@ public class UpdateStudentUseCase {
         // busca um aluno existente
         return studentRepository.findById(id)
                 .map(existingStudent -> {
-                    // atualiza só os campos permitidos
-                    existingStudent.setName(studentUpdate.getName());
-                    existingStudent.setEmail(studentUpdate.getEmail());
-                    existingStudent.setImageId(studentUpdate.getImageId());
-                    existingStudent.setEnrollmentProofId(studentUpdate.getEnrollmentProofId());
+
+                    // atualiza só os campos permitidos, se for null, manterá o mesmo valor existente
+                    if (studentUpdate.getName() != null && !studentUpdate.getName().isBlank()) {
+                        existingStudent.setName(studentUpdate.getName());
+                    }
+
+                    if (studentUpdate.getEmail() != null && !studentUpdate.getEmail().isBlank()) {
+                        existingStudent.setEmail(studentUpdate.getEmail());
+                    }
+
+                    if (studentUpdate.getRegistration() != null && !studentUpdate.getRegistration().isBlank()) {
+                        existingStudent.setRegistration(studentUpdate.getRegistration());
+                    }
+
+                    if (studentUpdate.getImageId() != null) {
+                        existingStudent.setImageId(studentUpdate.getImageId());
+                    }
+
+                    if (studentUpdate.getEnrollmentProofId() != null) {
+                        existingStudent.setEnrollmentProofId(studentUpdate.getEnrollmentProofId());
+                    }
 
                     // salva versão atualizada
                     return studentRepository.save(existingStudent);

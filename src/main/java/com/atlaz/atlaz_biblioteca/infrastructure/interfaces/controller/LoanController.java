@@ -49,7 +49,7 @@ public class LoanController {
                 .toList();
     }
 
-    @PutMapping("/{id}")
+    @PatchMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public LoanResponse update(@PathVariable Long id, @RequestBody CreateLoanRequest request) {
 

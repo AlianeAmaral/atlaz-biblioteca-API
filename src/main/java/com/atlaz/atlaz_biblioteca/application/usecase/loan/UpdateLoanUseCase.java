@@ -2,6 +2,7 @@ package com.atlaz.atlaz_biblioteca.application.usecase.loan;
 
 import com.atlaz.atlaz_biblioteca.domain.model.Loan;
 import com.atlaz.atlaz_biblioteca.domain.repository.LoanRepository;
+import com.atlaz.atlaz_biblioteca.infrastructure.util.CustomBeanUtils;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -17,11 +18,9 @@ public class UpdateLoanUseCase {
         // busca um empréstimo existente
         return loanRepository.findById(id)
                 .map(existingLoan -> {
-                    existingLoan.setRegistration(loanUpdate.getRegistration());
-                    existingLoan.setBookCode(loanUpdate.getBookCode());
-                    existingLoan.setStartDate(loanUpdate.getStartDate());
-                    existingLoan.setEndDate(loanUpdate.getEndDate());
-                    existingLoan.setLoanStatus(loanUpdate.getLoanStatus());
+
+                    // utilizado BeanUtils neste caso apenas para demonstração de resumo de código, padrão do Spring
+                    CustomBeanUtils.copyNonNullProperties(loanUpdate, existingLoan);
 
                     //salva versão atualizada
                     return loanRepository.save(existingLoan);

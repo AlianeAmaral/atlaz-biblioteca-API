@@ -17,12 +17,27 @@ public class UpdateBookUseCase {
         // busca um livro existente
         return bookRepository.findById(id)
                 .map(existingBook -> {
-                    existingBook.setBookCode(bookUpdate.getBookCode());
-                    existingBook.setTitle(bookUpdate.getTitle());
-                    existingBook.setAuthor(bookUpdate.getAuthor());
-                    existingBook.setGenre(bookUpdate.getGenre());
-                    existingBook.setImageId(bookUpdate.getImageId());
-                    existingBook.setBookStatus(bookUpdate.getBookStatus());
+
+                    if (bookUpdate.getTitle() != null && !bookUpdate.getTitle().isBlank()) {
+                        existingBook.setBookCode(bookUpdate.getBookCode());
+                    }
+
+                    if (bookUpdate.getAuthor() != null && !bookUpdate.getAuthor().isBlank()) {
+                        existingBook.setAuthor(bookUpdate.getAuthor());
+                    }
+
+                    if (bookUpdate.getGenre() != null && !bookUpdate.getGenre().isBlank()) {
+                        existingBook.setGenre(bookUpdate.getGenre());
+                    }
+
+                    if (bookUpdate.getImageId() != null && !bookUpdate.getImageId().isBlank()) {
+                        existingBook.setImageId(bookUpdate.getImageId());
+                    }
+
+                    // isBlank é apenas para textos
+                    if (bookUpdate.getBookStatus() != null){
+                        existingBook.setBookStatus(bookUpdate.getBookStatus());
+                    }
 
                     //salva versão atualizada
                     return bookRepository.save(existingBook);

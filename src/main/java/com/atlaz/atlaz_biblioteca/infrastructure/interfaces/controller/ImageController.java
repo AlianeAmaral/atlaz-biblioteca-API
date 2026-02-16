@@ -38,23 +38,32 @@ public class ImageController {
         return getImageUseCase.execute(id);
     }
 
+    // possibilita download da imagem existente
     @GetMapping("/{id}/download")
-    @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<byte[]> download(@PathVariable String id) {
 
-        // busca a imagem usando o usecase da imagem
+        // busca a imagem existente no usecase dela
         Image image = getImageUseCase.execute(id);
 
-        // converte o texto Base64 de volta para um array de bytes (binário)
-        byte[] fileData = java.util.Base64.getDecoder().decode(image.getBase64Data());
+        // coleta o texto original da imagem
+        String base64Text = image.getBase64Data();
 
-        // monta a resposta com o cabeçalho de download
+        // remove o prefixo (ex: "data:image/png;base64,") se existir
+        if (base64Text != null && base64Text.contains(",")) {
+            base64Text = base64Text.split(",")[1];
+        }
+
+        // limpa espaços em branco, tabs e quebras de linha ocultas
+        if (base64Text != null) {
+            base64Text = base64Text.replaceAll("\\s+", "");
+        }
+
+        // utilização do MimeDecoder (mais resistente a erros)
+        byte[] fileData = java.util.Base64.getMimeDecoder().decode(base64Text);
+
+        // monta a resposta para possibilitar o download
         return ResponseEntity.ok()
-
-                // aqui é definido o nome que será apresentado no arquivo de download
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + image.getFileName() + "\"")
-
-                // aqui descreve o tipo de conteúdo (opcional, mas é bom ter)
                 .contentType(MediaType.APPLICATION_OCTET_STREAM)
                 .body(fileData);
     }

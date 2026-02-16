@@ -49,7 +49,7 @@ public class BookController {
                 .toList();
     }
 
-    @PutMapping("/{id}")
+    @PatchMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
         // não foi criado outro UpdateBookRequest porque na edição seriam todos os campos para editar mesmo (DRY)
         public BookResponse update(@PathVariable Long id, @RequestBody CreateBookRequest request) {
