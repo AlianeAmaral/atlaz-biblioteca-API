@@ -61,7 +61,7 @@ public class ImageController {
         // utilização do MimeDecoder (mais resistente a erros)
         byte[] fileData = java.util.Base64.getMimeDecoder().decode(base64Text);
 
-        // monta a resposta para possibilitar o download
+        // monta a resposta para possibilitar o download da imagem
         return ResponseEntity.ok()
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + image.getFileName() + "\"")
                 .contentType(MediaType.APPLICATION_OCTET_STREAM)
