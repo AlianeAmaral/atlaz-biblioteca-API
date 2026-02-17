@@ -1,7 +1,9 @@
 package com.atlaz.atlaz_biblioteca.infrastructure.interfaces.controller;
 
+import com.atlaz.atlaz_biblioteca.application.usecase.student.GetStudentUseCase;
 import com.atlaz.atlaz_biblioteca.application.usecase.student.ListAllStudentUseCase;
 import com.atlaz.atlaz_biblioteca.application.usecase.student.UpdateStudentUseCase;
+import com.atlaz.atlaz_biblioteca.domain.model.Image;
 import com.atlaz.atlaz_biblioteca.domain.model.Student;
 import com.atlaz.atlaz_biblioteca.application.usecase.student.CreateStudentUseCase;
 import com.atlaz.atlaz_biblioteca.infrastructure.interfaces.dto.request.CreateStudentRequest;
@@ -17,13 +19,15 @@ public class StudentController {
 
     // foi colocado dessa forma para separar quem cria e quem lista (SRP: princípio da responsabilidade única)
     private final CreateStudentUseCase createStudentUseCase;
+    private final GetStudentUseCase getStudentUseCase;
     private final ListAllStudentUseCase listAllStudentUseCase;
     private final UpdateStudentUseCase updateStudentUseCase;
     private final StudentMapper studentMapper;
 
     // construtor que injeta as duas dependências
-    public StudentController(CreateStudentUseCase createStudentUseCase, ListAllStudentUseCase listAllStudentUseCase, UpdateStudentUseCase updateStudentUseCase, StudentMapper studentMapper) {
+    public StudentController(CreateStudentUseCase createStudentUseCase, GetStudentUseCase getStudentUseCase, ListAllStudentUseCase listAllStudentUseCase, UpdateStudentUseCase updateStudentUseCase, StudentMapper studentMapper) {
         this.createStudentUseCase = createStudentUseCase;
+        this.getStudentUseCase = getStudentUseCase;
         this.listAllStudentUseCase = listAllStudentUseCase;
         this.updateStudentUseCase = updateStudentUseCase;
         this.studentMapper = studentMapper;
@@ -40,6 +44,14 @@ public class StudentController {
 
         // converte domínio para DTO (response) e retorna resultado
         return studentMapper.toResponse(savedStudent);
+    }
+
+    // utilizado para ver detalhes do aluno
+    @GetMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public StudentResponse getById(@PathVariable Long id) {
+        Student student = getStudentUseCase.execute(id);
+        return studentMapper.toResponse(student);
     }
 
     @GetMapping

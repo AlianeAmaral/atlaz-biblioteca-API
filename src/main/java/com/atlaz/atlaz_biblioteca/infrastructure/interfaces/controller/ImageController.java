@@ -38,6 +38,32 @@ public class ImageController {
         return getImageUseCase.execute(id);
     }
 
+    // mostrar pré-visualização da imagem por ID
+    @GetMapping("/{id}/view")
+    public ResponseEntity<byte[]> view(@PathVariable String id) {
+        // busca a imagem no usecase
+        Image image = getImageUseCase.execute(id);
+
+        // 2. Coleta e limpa o Base64 (Lógica que você já usa no download)
+        String base64Text = image.getBase64Data();
+        if (base64Text != null && base64Text.contains(",")) {
+            base64Text = base64Text.split(",")[1];
+        }
+
+        if (base64Text != null) {
+            base64Text = base64Text.replaceAll("\\s+", "");
+        }
+
+        // decodifica para bytes
+        byte[] fileData = java.util.Base64.getMimeDecoder().decode(base64Text);
+
+        // retorna os bytes com o content-type de imagem, ermite que o navegador entenda que o retorno é uma foto
+        return ResponseEntity.ok()
+                .contentType(MediaType.IMAGE_PNG)
+                .contentType(MediaType.IMAGE_JPEG)// ou MediaType.IMAGE_JPEG dependendo do padrão
+                .body(fileData);
+    }
+
     // possibilita download da imagem existente
     @GetMapping("/{id}/download")
     public ResponseEntity<byte[]> download(@PathVariable String id) {
