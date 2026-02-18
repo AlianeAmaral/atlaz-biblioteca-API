@@ -7,7 +7,7 @@ import com.atlaz.atlaz_biblioteca.domain.repository.LoanRepository;
 import com.atlaz.atlaz_biblioteca.domain.repository.StudentRepository;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Service
 public class CreateLoanUseCase {
@@ -33,8 +33,8 @@ public class CreateLoanUseCase {
                 .orElseThrow(() -> new RuntimeException("Livro não encontrado com o código: " + loan.getBookCode()));
 
         // regra de negócio: configurar datas, empréstimo automático de 7 dias e status inicial
-        loan.setStartDate(LocalDateTime.now());
-        loan.setEndDate(LocalDateTime.now().plusDays(7));
+        loan.setStartDate(LocalDate.now());
+        loan.setEndDate(LocalDate.now().plusDays(7));
         loan.setLoanStatus(LoanStatus.EMPRESTADO);
 
         // salva o empréstimo em caso de sucesso

@@ -1,16 +1,16 @@
 package com.atlaz.atlaz_biblioteca.domain.model;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 public class Loan {
     private Long id;
     private String registration;
     private Long bookCode;
-    private LocalDateTime startDate;
-    private LocalDateTime endDate;
+    private LocalDate startDate;
+    private LocalDate endDate;
     private LoanStatus loanStatus;
 
-    public Loan(Long id, String registration, Long bookCode, LocalDateTime startDate, LocalDateTime endDate, LoanStatus loanStatus) {
+    public Loan(Long id, String registration, Long bookCode, LocalDate startDate, LocalDate endDate, LoanStatus loanStatus) {
         this.id = id;
         this.registration = registration;
         this.bookCode = bookCode;
@@ -46,19 +46,19 @@ public class Loan {
         this.bookCode = bookCode;
     }
 
-    public LocalDateTime getStartDate() {
+    public LocalDate getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(LocalDateTime startDate) {
+    public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
     }
 
-    public LocalDateTime getEndDate() {
+    public LocalDate getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(LocalDateTime endDate) {
+    public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
     }
 

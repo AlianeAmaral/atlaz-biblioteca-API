@@ -18,7 +18,7 @@ public record CreateBookRequest (
         @NotBlank(message = "O preenchimento do gênero é obrigatório")
         String genre,
 
-        @NotNull(message = "É obrigatório selecionar o status disponível ou indisponível")
+        @NotNull(message = "É obrigatório selecionar o status")
         BookStatus bookStatus,
 
         String imageId
