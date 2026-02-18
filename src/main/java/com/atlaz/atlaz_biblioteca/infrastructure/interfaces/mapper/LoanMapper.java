@@ -13,6 +13,9 @@ public class LoanMapper {
         Loan loan = new Loan();
         loan.setRegistration(request.registration());
         loan.setBookCode(request.bookCode());
+        loan.setStartDate(request.startDate());
+        loan.setEndDate(request.endDate());
+        loan.setLoanStatus(request.loanStatus());
         return loan;
     }
 

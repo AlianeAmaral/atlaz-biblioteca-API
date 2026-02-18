@@ -32,10 +32,10 @@ public class CreateLoanUseCase {
         var book = bookRepository.findByBookCode(loan.getBookCode())
                 .orElseThrow(() -> new RuntimeException("Livro não encontrado com o código: " + loan.getBookCode()));
 
-        // regra de negócio: configurar datas, empréstimo automático de 7 dias e status inicial
-        loan.setStartDate(LocalDate.now());
-        loan.setEndDate(LocalDate.now().plusDays(7));
-        loan.setLoanStatus(LoanStatus.EMPRESTADO);
+        // regra de negócio: configurar datas, empréstimo automático de 7 dias e status inicial, sobrescreve o front
+        //loan.setStartDate(LocalDate.now());
+        //loan.setEndDate(LocalDate.now().plusDays(7));
+        //loan.setLoanStatus(LoanStatus.EMPRESTADO);
 
         // salva o empréstimo em caso de sucesso
         return loanRepository.save(loan);
