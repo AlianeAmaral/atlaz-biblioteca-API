@@ -1,10 +1,12 @@
 package com.atlaz.atlaz_biblioteca.application.usecase.loan;
 
+import com.atlaz.atlaz_biblioteca.domain.model.BookStatus;
 import com.atlaz.atlaz_biblioteca.domain.model.Loan;
 import com.atlaz.atlaz_biblioteca.domain.model.LoanStatus;
 import com.atlaz.atlaz_biblioteca.domain.repository.BookRepository;
 import com.atlaz.atlaz_biblioteca.domain.repository.LoanRepository;
 import com.atlaz.atlaz_biblioteca.domain.repository.StudentRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;

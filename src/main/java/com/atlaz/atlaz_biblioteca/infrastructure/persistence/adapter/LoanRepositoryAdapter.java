@@ -1,5 +1,6 @@
 package com.atlaz.atlaz_biblioteca.infrastructure.persistence.adapter;
 
+import com.atlaz.atlaz_biblioteca.domain.model.BookStatus;
 import com.atlaz.atlaz_biblioteca.domain.model.Loan;
 import com.atlaz.atlaz_biblioteca.domain.repository.LoanRepository;
 import com.atlaz.atlaz_biblioteca.infrastructure.persistence.entity.LoanEntity;
@@ -31,6 +32,9 @@ public class LoanRepositoryAdapter implements LoanRepository {
 
         var bookEntity = bookJpaRepository.findByBookCode(loan.getBookCode())
                 .orElseThrow(() -> new RuntimeException("Livro não encontrado com código: " + loan.getBookCode()));
+
+        // atualiza o status do objeto livro e persiste o status novo
+        bookEntity.setBookStatus(BookStatus.EMPRESTADO);
 
         // modelo de domain para entity no banco
         LoanEntity entity = new LoanEntity();
