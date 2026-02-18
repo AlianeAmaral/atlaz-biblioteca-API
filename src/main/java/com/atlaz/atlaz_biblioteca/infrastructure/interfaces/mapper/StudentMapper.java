@@ -8,11 +8,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class StudentMapper {
 
-    // converte DTO (request) para domínio
+    // converte DTO (request) para domínio, ID é nulo porque o aluno é novo e ainda não foi salvo no banco
+    // está como request pois no CreateStudentRequest está como record
     public Student toDomain(CreateStudentRequest request) {
         return new Student(
-                null, // ID é nulo porque o aluno é novo e ainda não foi salvo no banco
-                request.name(), // está como request pois no CreateStudentRequest está como record
+                null,
+                request.name(),
                 request.email(),
                 request.registration(),
                 request.imageId(),
@@ -20,10 +21,10 @@ public class StudentMapper {
         );
     }
 
-    // converte do domínio (Student) para DTO (response)
+    // converte do domínio (student) para DTO (response), nesse momento o ID passa a existir
     public StudentResponse toResponse(Student student) {
         return new StudentResponse(
-                student.getId(), // nesse momento o ID passa a existir
+                student.getId(),
                 student.getName(),
                 student.getEmail(),
                 student.getRegistration(),

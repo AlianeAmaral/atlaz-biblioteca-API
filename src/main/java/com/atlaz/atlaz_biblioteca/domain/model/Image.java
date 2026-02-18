@@ -3,7 +3,7 @@ package com.atlaz.atlaz_biblioteca.domain.model;
 public class Image {
 
     private String id; // id é string no mongodb
-    private String fileName; // nome real do arquivo com extensão (.jpg)
+    private String fileName; // nome real do arquivo com extensão (.jpg por exemplo)
     private String base64Data; // imagem transformada em texto
 
     public Image(){

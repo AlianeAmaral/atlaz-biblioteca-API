@@ -6,7 +6,6 @@ import com.atlaz.atlaz_biblioteca.infrastructure.persistence.entity.StudentEntit
 import com.atlaz.atlaz_biblioteca.infrastructure.persistence.repository.StudentJpaRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Component;
-
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;

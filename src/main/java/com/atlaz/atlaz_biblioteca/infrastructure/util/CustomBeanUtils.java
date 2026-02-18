@@ -3,10 +3,11 @@ package com.atlaz.atlaz_biblioteca.infrastructure.util;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.BeanWrapper;
 import org.springframework.beans.BeanWrapperImpl;
-
 import java.util.HashSet;
 import java.util.Set;
 
+// utilitário usado para evitar condicional dos updates (PATCH)
+// está sendo usado só em UpdateLoanUseCase para exemplificar
 public class CustomBeanUtils {
 
     // copia propriedades de um objeto para outro ignorando campos nulos

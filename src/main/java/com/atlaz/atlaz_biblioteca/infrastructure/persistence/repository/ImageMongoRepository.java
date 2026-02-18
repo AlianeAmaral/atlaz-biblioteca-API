@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ImageMongoRepository extends MongoRepository<ImageEntity, String> {
-    // aqui o spring já entnde que você quer salvar ImageEntity usando String como ID
-    // esse arquivo é a ferramenta técnica que fala a língua do mongodb
+    // spring entende que você quer salvar ImageEntity usando String como ID neste local
+    // esse arquivo é o local que fala a língua do banco utilizado
 }

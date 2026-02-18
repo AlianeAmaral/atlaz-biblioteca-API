@@ -26,7 +26,8 @@ public class BookEntity {
     @Column(nullable = true, name = "book_id")
     private String imageId;
 
-    @Enumerated(EnumType.STRING) // @Enumerated faz o hibernate salvar o texto "DISPONÍVEL"
+    // @Enumerated faz o hibernate salvar o texto do status como texto
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private BookStatus bookStatus;
 

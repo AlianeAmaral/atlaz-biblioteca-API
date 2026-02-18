@@ -3,7 +3,6 @@ package com.atlaz.atlaz_biblioteca.infrastructure.interfaces.controller;
 import com.atlaz.atlaz_biblioteca.application.usecase.student.GetStudentUseCase;
 import com.atlaz.atlaz_biblioteca.application.usecase.student.ListAllStudentUseCase;
 import com.atlaz.atlaz_biblioteca.application.usecase.student.UpdateStudentUseCase;
-import com.atlaz.atlaz_biblioteca.domain.model.Image;
 import com.atlaz.atlaz_biblioteca.domain.model.Student;
 import com.atlaz.atlaz_biblioteca.application.usecase.student.CreateStudentUseCase;
 import com.atlaz.atlaz_biblioteca.infrastructure.interfaces.dto.request.CreateStudentRequest;
@@ -24,7 +23,7 @@ public class StudentController {
     private final UpdateStudentUseCase updateStudentUseCase;
     private final StudentMapper studentMapper;
 
-    // construtor que injeta as duas dependências
+    // construtor que injeta as dependências
     public StudentController(CreateStudentUseCase createStudentUseCase, GetStudentUseCase getStudentUseCase, ListAllStudentUseCase listAllStudentUseCase, UpdateStudentUseCase updateStudentUseCase, StudentMapper studentMapper) {
         this.createStudentUseCase = createStudentUseCase;
         this.getStudentUseCase = getStudentUseCase;
@@ -76,7 +75,7 @@ public class StudentController {
         // executa o UseCase passando o ID da URL e demais dados do objeto
         Student updatedStudent = updateStudentUseCase.execute(id, studentDomain);
 
-        // Converte de volta para Response (DTO)
+        // converte de volta para response DTO
         return studentMapper.toResponse(updatedStudent);
     }
 }

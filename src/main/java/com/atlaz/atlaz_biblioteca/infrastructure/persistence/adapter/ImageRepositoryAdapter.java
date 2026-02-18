@@ -5,7 +5,6 @@ import com.atlaz.atlaz_biblioteca.domain.repository.ImageRepository;
 import com.atlaz.atlaz_biblioteca.infrastructure.persistence.entity.ImageEntity;
 import com.atlaz.atlaz_biblioteca.infrastructure.persistence.repository.ImageMongoRepository;
 import org.springframework.stereotype.Component;
-
 import java.util.Optional;
 
 @Component // diz para o spring gerenciar essa classe
@@ -36,6 +35,7 @@ public class ImageRepositoryAdapter implements ImageRepository {
 
     @Override
     public Optional<Image> findById(String id) {
+
         // busca no banco, se encontrar converte para domain
         return imageMongoRepository.findById(id)
                 .map(this::toDomain);

@@ -2,7 +2,6 @@ package com.atlaz.atlaz_biblioteca.infrastructure.persistence.entity;
 
 import com.atlaz.atlaz_biblioteca.domain.model.LoanStatus;
 import jakarta.persistence.*;
-
 import java.time.LocalDate;
 
 @Entity

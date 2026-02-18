@@ -8,7 +8,6 @@ import com.atlaz.atlaz_biblioteca.infrastructure.persistence.repository.BookJpaR
 import com.atlaz.atlaz_biblioteca.infrastructure.persistence.repository.LoanJpaRepository;
 import com.atlaz.atlaz_biblioteca.infrastructure.persistence.repository.StudentJpaRepository;
 import org.springframework.stereotype.Component;
-
 import java.util.List;
 import java.util.Optional;
 

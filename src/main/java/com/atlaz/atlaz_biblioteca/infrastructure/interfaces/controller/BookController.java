@@ -5,14 +5,11 @@ import com.atlaz.atlaz_biblioteca.application.usecase.book.GetBookUseCase;
 import com.atlaz.atlaz_biblioteca.application.usecase.book.ListAllBookUseCase;
 import com.atlaz.atlaz_biblioteca.application.usecase.book.UpdateBookUseCase;
 import com.atlaz.atlaz_biblioteca.domain.model.Book;
-import com.atlaz.atlaz_biblioteca.domain.model.Student;
 import com.atlaz.atlaz_biblioteca.infrastructure.interfaces.dto.request.CreateBookRequest;
 import com.atlaz.atlaz_biblioteca.infrastructure.interfaces.dto.response.BookResponse;
-import com.atlaz.atlaz_biblioteca.infrastructure.interfaces.dto.response.StudentResponse;
 import com.atlaz.atlaz_biblioteca.infrastructure.interfaces.mapper.BookMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -63,7 +60,7 @@ public class BookController {
 
     @PatchMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-        // não foi criado outro UpdateBookRequest porque na edição seriam todos os campos para editar mesmo (DRY)
+        // não foi criado outro UpdateBookRequest porque na edição seriam todos os mesmos campos para editar (DRY)
         public BookResponse update(@PathVariable Long id, @RequestBody CreateBookRequest request) {
 
             Book bookDomain = bookMapper.toDomain(request);

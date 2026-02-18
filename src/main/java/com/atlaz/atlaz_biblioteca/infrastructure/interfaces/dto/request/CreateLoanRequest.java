@@ -3,7 +3,6 @@ package com.atlaz.atlaz_biblioteca.infrastructure.interfaces.dto.request;
 import com.atlaz.atlaz_biblioteca.domain.model.LoanStatus;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-
 import java.time.LocalDate;
 
 public record CreateLoanRequest(

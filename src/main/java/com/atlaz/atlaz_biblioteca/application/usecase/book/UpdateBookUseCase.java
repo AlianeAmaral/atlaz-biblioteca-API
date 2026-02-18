@@ -39,7 +39,7 @@ public class UpdateBookUseCase {
                         existingBook.setBookStatus(bookUpdate.getBookStatus());
                     }
 
-                    //salva versão atualizada
+                    // salva versão atualizada
                     return bookRepository.save(existingBook);
                 })
                 .orElseThrow(() -> new RuntimeException("Livro com ID " + id + " não encontrado"));

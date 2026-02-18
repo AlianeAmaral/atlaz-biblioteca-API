@@ -3,7 +3,7 @@ package com.atlaz.atlaz_biblioteca.infrastructure.persistence.entity;
 import jakarta.persistence.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-// aqui não será entity pois ela é do Postgres/JPA, aqui será @Document, que diz ao spring que vai para uma coleção
+// aqui não será @Entity pois ela é do Postgres/JPA, aqui será @Document, que diz ao spring que vai para uma coleção
 @Document(collection = "images")
 public class ImageEntity {
 

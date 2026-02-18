@@ -4,8 +4,9 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 
 // record: cria automaticamente construtor, getters, equals e hashcode - recomendado para DTOs para ser facilitação
-// @NotBlack: garante preenchimento
-// @Email: garante que o email tenha formato (@ e .)
+// @NotBlank: garante preenchimento, para strings
+// @NotNull: garante preenchimento, para os demais
+// @Email: garante que o email tenha formato (com @)
 
 public record CreateStudentRequest (
 

@@ -3,7 +3,6 @@ package com.atlaz.atlaz_biblioteca.application.usecase.book;
 import com.atlaz.atlaz_biblioteca.domain.model.Book;
 import com.atlaz.atlaz_biblioteca.domain.repository.BookRepository;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service

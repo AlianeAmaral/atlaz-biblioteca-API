@@ -9,7 +9,6 @@ import com.atlaz.atlaz_biblioteca.infrastructure.interfaces.dto.response.LoanRes
 import com.atlaz.atlaz_biblioteca.infrastructure.interfaces.mapper.LoanMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController

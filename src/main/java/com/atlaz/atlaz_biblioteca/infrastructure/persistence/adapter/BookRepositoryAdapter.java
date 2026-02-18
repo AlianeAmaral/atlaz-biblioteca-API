@@ -5,7 +5,6 @@ import com.atlaz.atlaz_biblioteca.domain.repository.BookRepository;
 import com.atlaz.atlaz_biblioteca.infrastructure.persistence.entity.BookEntity;
 import com.atlaz.atlaz_biblioteca.infrastructure.persistence.repository.BookJpaRepository;
 import org.springframework.stereotype.Component;
-
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
