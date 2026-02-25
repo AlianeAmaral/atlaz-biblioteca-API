@@ -29,7 +29,7 @@ Este projeto com **Back-end e Front-end**, se trata de um sistema **biblioteca a
 
 <h2>💜 Apresentação do Sistema</h2>
 
-
+<img src="https://github.com/AlianeAmaral/atlaz-biblioteca-API/blob/main/apresentacao-sistema.gif" width="1000"> 
 
 ---
 
@@ -127,7 +127,7 @@ O código estará completamente em **EN-US**, mas a apresentação das telas do 
 
 🟢 **Swagger:** http://localhost:8081/swagger-ui.html
 
-
+<img src="https://github.com/AlianeAmaral/atlaz-biblioteca-API/blob/main/apresentacao-swagger.gif" width="1000"> 
 
 ---
 
