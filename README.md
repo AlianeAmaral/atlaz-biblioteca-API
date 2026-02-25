@@ -135,9 +135,8 @@ O código estará completamente em **EN-US**, mas a apresentação das telas do 
 
 1. Tenha as ferramentas instaladas nas versões indicadas.
 2. Clone os dois repositórios nas IDEs correspondentes.
-3. Acesse a pasta correta para execução: <br>
-> cd atlaz_biblioteca
-4. Para rodar o front-end, pode realizar o comando: <br>
+3. Para rodar o front-end, pode realizar os comandos: <br>
+> cd atlaz-biblioteca-web
 > npm run dev
-6. Para rodar o back-end API, pode realizar o comando "Run" através da interface.
-7. Ou você pode utilizar o Docker com base nas informações acima.
+4. Para rodar o back-end API, pode realizar o comando "Run" através da interface.
+5. Ou você pode utilizar o Docker com base nas informações acima.
