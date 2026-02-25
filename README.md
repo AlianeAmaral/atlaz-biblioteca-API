@@ -16,14 +16,46 @@ Este projeto com **Back-end e Front-end**, se trata de um sistema **biblioteca a
 ><br>
 >👉🏻 Repositório do Front: https://github.com/AlianeAmaral/atlaz-biblioteca-web
 
+<h2>💡 Sobre o Nome </h2>
+
+<table> 
+    <td align="left">
+        <img src="https://github.com/AlianeAmaral/atlaz-biblioteca-web/blob/main/src/presentation/assets/images/img_mascot_neutral.png" width="90">
+    </td>
+    <td width="750" align="center">
+        <h3>🪐 O nome "Atlaz" foi escolhido com o final do nome em referência à empresa "AZ", para quem foi desenvolvido este portfólio ✨</h3>
+    </td>
+</table>
+
+<h2>💜 Apresentação do Sistema</h2>
+
+
+
 ---
 
-<h2>🚀 Tecnologias Utilizadas</h2>
+<h2>🚀 Tecnologias Utilizadas e Pré-Requisitos</h2>
 
-- **Back-end:** Java (21), Spring Boot (3.4.2) | **IDE Utilizada:** IntelliJ Community.
-- **Front-end:** Vue.js, Tailwind CSS | **IDE Utilizada:** VS Code ou Visual Studio.
-- **Bancos de Dados:** PostgreSQL (dados estruturados) e MongoDB (metadados).
-- **Gerenciador de Dependências:** Maven, NPM.
+Para rodar o projeto, você precisará utilizar as seguintes tecnologias e versões utilizadas:
+
+- **Back-end:**
+> ☕ Java (21) <br>
+> 🌱 Spring Boot (3.4.2) <br>
+**🔹 IDE:** IntelliJ Community
+
+- **Front-end:** 
+> ⚡ Vue.js <br>
+> 🎨 Tailwind CSS <br>
+**🔹 IDE:** VS Code
+
+- **Bancos de Dados:** 
+> 🐘 PostgreSQL (dados estruturados) <br>
+> 🍃 MongoDB (metadados)
+
+- **Gerenciador de Dependências:**
+> 🧱 Maven <br>
+> 📦 NPM
+
+---
 
 <h2>🛠️ Técnicas Aplicadas</h2>
 
@@ -50,16 +82,7 @@ Este projeto com **Back-end e Front-end**, se trata de um sistema **biblioteca a
 
 O código estará completamente em **EN-US**, mas a apresentação das telas do sistema estarão em **PT-BR**.
 
-<h2>💡 Sobre o Nome </h2>
-
-<table> 
-    <td align="left">
-        <img src="https://github.com/AlianeAmaral/atlaz-biblioteca-web/blob/main/src/presentation/assets/images/img_mascot_neutral.png" width="90">
-    </td>
-    <td width="750" align="center">
-        <h3>🪐 O nome "Atlaz" foi escolhido com o final do nome em referência à empresa "AZ", para quem foi desenvolvido este portfólio ✨</h3>
-    </td>
-</table>
+----
 
 <h2>👩🏻‍💻 Funcionalidades Desenvolvidas</h2>
 
@@ -70,3 +93,51 @@ O código estará completamente em **EN-US**, mas a apresentação das telas do 
 - Possibilidade de cadastrar e editar alunos, livros e empréstimos de livros feitos por estes alunos com data de início e devolução.
 - Exibição do status dos empréstimos, como: *Disponível, Emprestado, Devolvido Dentro do Prazo/Fora do Prazo, Atrasado e Perdido.*
 - Exibição do status dos livros, como: *Disponível, Emprestado, Em Falta.*
+
+----
+
+<h2>🗄️ Configuração dos Bancos de Dados</h2>
+
+### 🐘 PostgreSQL (Dados Padrão)
+
+- **Host:** localhost <br>
+- **Porta:** 5432 <br>
+- **Database:** atlaz_biblioteca <br>
+- **Usuário:** postgres <br>
+- **Senha:** admin12345 <br>
+
+**🔗 URL de Conexão:** jdbc:postgresql://localhost:5432/atlaz_biblioteca
+
+----
+
+### 🍃 MongoDB (Dados Padrão)
+
+- **Host:** localhost <br>
+- **Porta:** 27017 <br>
+- **Database:** biblioteca_midia <br>
+
+**🔗 URI de Conexão:** mongodb://localhost:27017/biblioteca_midia
+
+----
+
+<h2>🚪 Portas da Aplicação</h2>
+
+**🚀 Execução da API:** http://localhost:8081 <br>
+**🚀 Execução da Web:** http://localhost:5173
+
+🟢 **Swagger:** http://localhost:8081/swagger-ui.html
+
+
+
+---
+
+<H2>▶️ Para Executar o Projeto</H2> 
+
+1. Tenha as ferramentas instaladas nas versões indicadas.
+2. Clone os dois repositórios nas IDEs correspondentes.
+3. Acesse a pasta correta para execução: <br>
+> cd atlaz_biblioteca
+4. Para rodar o front-end, pode realizar o comando: <br>
+> npm run dev
+6. Para rodar o back-end API, pode realizar o comando "Run" através da interface.
+7. Ou você pode utilizar o Docker com base nas informações acima.
